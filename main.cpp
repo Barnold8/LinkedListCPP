@@ -12,7 +12,7 @@ void printList(Node* n) {
 
 	while (n!=NULL) {
 		
-		std::cout << n->Value;
+		std::cout << n->Value << std::endl;
 		n = n->Next;
 
 	}
