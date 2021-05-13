@@ -8,15 +8,27 @@ struct Node {
 
 };
 
-void printList(Node* n) {
+void printList(Node* n) {			//Takes a node pointer
 
-	while (n!=NULL) {
+	while (n!=NULL) {			//While the pointer isnt NULL
 		
-		std::cout << n->Value << std::endl;
-		n = n->Next;
+		std::cout << n->Value << std::endl;		//Print used for debugging purposes	
+		n = n->Next;					//Value of n is swapped for the next pointer in the list, this makes it so we can iterate through all list objects and reach the null pointer
 
 	}
 
+}
+
+
+void insertFNode(Node** head, int newValue) {   //Inserts node at the front of the list
+
+	Node * NewNode = new Node();		//Adds Node object to memory
+
+	NewNode->Value = newValue;		//Appends the int value from function param to object
+
+	NewNode->Next = *head;			//Grabs the address of head param and that becomes the next node for this new head node
+
+	*head = NewNode;			//Makes sure that now the new node is at the start of the list 
 }
 
 
